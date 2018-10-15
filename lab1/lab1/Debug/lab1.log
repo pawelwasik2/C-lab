@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\fd2lab0704\desktop\lab1\lab1\main.cpp(61): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\fd2lab0704\desktop\lab1\lab1\main.cpp(61): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  lab1.vcxproj -> C:\Users\FD2Lab0704\Desktop\lab1\Debug\lab1.exe
+  lab1.vcxproj -> C:\Users\FD2Lab0704\Desktop\lab1\Debug\lab1.pdb (Full PDB)

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -6,11 +7,14 @@ void silnia(int a);
 void pierwiastek(int a, int b, int c);
 double obliczp(int a);
 int fib(int a);
+void wypisz(string a);
+void policz(string a, char b);
 
 int main()
 {
 	int wybor;
-	cout << "Wybierz: \n1 - silnia \n2 - pierwiastek rownania kwadratowego \n3 - fibonacci \n";
+	cout << "Wybierz: \n1 - silnia \n2 - pierwiastek rownania kwadratowego \n3 - fibonacci \n4 - Podwoj literki w wyrazie \n";
+	cout << "5 - oblicz liczbe wystapien \n";
 	cin >> wybor;
 	switch (wybor)
 	{
@@ -35,6 +39,23 @@ int main()
 		cout << "Podaj ktora z kolei liczbe ciagu chcesz zobaczyc \n";
 		cin >> num;
 		cout << "Wynik: " << fib(num) << "\n";
+		break;
+	case 4:
+	{
+		string wyraz;
+		cout << "Podaj wyraz w ktorym litery chcesz podwoic.";
+		cin >> wyraz;
+		wypisz(wyraz);
+	}
+		break;
+	case 5:
+		string wyr;
+		char x;
+		cout << "Podaj literke\n" ;
+		cin >> x;
+		cout << "Podaj wyraz w ktorym chcesz policzyc ile razy wystepuje dana literka\n";
+		cin >> wyr;
+		policz(wyr, x);
 		break;
 	}
 	system("PAUSE");
@@ -92,4 +113,27 @@ int fib(int a)
 		return a;
 	else
 		return fib(a-1) + fib(a-2);
+}
+
+void wypisz(string a)
+{
+	int i,j;
+	i = a.length();
+	for (j = 0; j < i; j++)
+	{
+		cout << a[j] << a[j];
+	}
+	cout << endl;
+}
+
+void policz(string a, char b)
+{
+	int i, j, k=0;
+	i = a.length();
+	for (j = 0; j < i; j++)
+	{
+		if (a[j] == b)
+			k++;
+	}
+	cout << "W wyrazie " << a << " literka " << b << " wystapila " << k << " razy.\n";
 }

@@ -9,12 +9,14 @@ double obliczp(int a);
 int fib(int a);
 void wypisz(string a);
 void policz(string a, char b);
+void reverse(string a);
+void bubblesort(int tab[], int size);
 
 int main()
 {
 	int wybor;
 	cout << "Wybierz: \n1 - silnia \n2 - pierwiastek rownania kwadratowego \n3 - fibonacci \n4 - Podwoj literki w wyrazie \n";
-	cout << "5 - oblicz liczbe wystapien \n";
+	cout << "5 - oblicz liczbe wystapien \n6 - Odwroc wyraz \n7 - Sortuj tablice \n";
 	cin >> wybor;
 	switch (wybor)
 	{
@@ -49,13 +51,35 @@ int main()
 	}
 		break;
 	case 5:
+	{
 		string wyr;
 		char x;
-		cout << "Podaj literke\n" ;
+		cout << "Podaj literke\n";
 		cin >> x;
 		cout << "Podaj wyraz w ktorym chcesz policzyc ile razy wystepuje dana literka\n";
 		cin >> wyr;
 		policz(wyr, x);
+		break;
+	}
+	case 6:
+	{
+		string odwr;
+		cout << "Podaj wyraz ktory ma zostac odwrocony \n";
+		cin >> odwr;
+		reverse(odwr);
+		break;
+	}
+	case 7:
+		int tab[100];
+		int e;
+		cout << "Ilu elementowa tablice chcesz posortowac?\n";
+		cin >> e;
+		cout << "Podaj liczby\n";
+		for (int i = 0; i < e; i++)
+		{
+			cin >> tab[i];
+		}
+		bubblesort(tab, e);
 		break;
 	}
 	system("PAUSE");
@@ -136,4 +160,33 @@ void policz(string a, char b)
 			k++;
 	}
 	cout << "W wyrazie " << a << " literka " << b << " wystapila " << k << " razy.\n";
+}
+
+void reverse(string a)
+{
+	int i, j;
+	j = a.length();
+	for (i=j;i>=0;i--)
+	{
+		cout << a[i];
+	}
+	cout << endl;
+}
+
+void bubblesort(int tab[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size - 1; j++)
+		{
+			if (tab[j] > tab[j + 1])
+				swap(tab[j], tab[j + 1]);
+		}
+	}
+
+	for(int i=0;i<size;i++)
+	{
+		cout << tab[i];
+	}
+	cout << endl;
 }
